@@ -11,26 +11,26 @@
                 <a href="blog-single">
                   <img
                     class="card-img-bottom d-block radius-image"
-                    src="assets/images/b1.jpg"
+                    src="{{featuredFistItem.image}}"
                     alt="Card image cap"
                   />
                 </a>
               </div>
               <div class="card-body p-0 blog-details">
                 <a href="blog-single" class="blog-desc"
-                  >How to Create Detailed Buyer Personas for Your Business
+                  >
+                  {{featuredFistItem.title}}
                 </a>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit.
-                  Qui eligendi vitae sit.
+                  {{featuredFistItem.description}}
                 </p>
                 <div class="author align-items-center mt-3 mb-1">
-                  <a href="#author">Johnson smith</a> in
+                  <a href="#author">{{featuredFistItem.author}}</a> in
                   <a href="#url">Design</a>
                 </div>
                 <ul class="blog-meta">
                   <li class="meta-item blog-lesson">
-                    <span class="meta-value"> April 13, 2020 </span>
+                    <span class="meta-value"> {{featuredFistItem.createdDate}} </span>
                   </li>
                   <li class="meta-item blog-students">
                     <span class="meta-value"> 6min read</span>
@@ -44,81 +44,62 @@
           </div>
           <div class="col-lg-7 col-md-6 mt-md-0 mt-5">
             <div class="list-view list-view1">
-              <div class="grids5-info">
-                <a href="blog-single" class="d-block zoom"
-                  ><img
-                    src="assets/images/1.jpg"
-                    alt=""
-                    class="img-fluid radius-image news-image"
-                /></a>
-                <div class="blog-info align-self">
-                  <a href="blog-single" class="blog-desc1"
-                    >How to Create your blog domain to make it live
-                  </a>
-                  <div class="author align-items-center mt-3 mb-1">
-                    <a href="#author">Johnson smith</a> in
-                    <a href="#url">Design</a>
+              {{#each featuredRemainItems}}
+                {{#if (isZero @index)}}
+                  <div class="grids5-info">
+                    <a href="blog-single" class="d-block zoom"
+                      ><img
+                        src="{{this.image}}"
+                        alt=""
+                        class="img-fluid radius-image news-image"
+                    /></a>
+                    <div class="blog-info align-self">
+                      <a href="blog-single" class="blog-desc1"
+                        >{{this.title}}
+                      </a>
+                      <div class="author align-items-center mt-3 mb-1">
+                        <a href="#author">{{this.author}}</a> in
+                        <a href="#url">Design</a>
+                      </div>
+                      <ul class="blog-meta">
+                        <li class="meta-item blog-lesson">
+                          <span class="meta-value"> {{this.createdDate}} </span>
+                        </li>
+                        <li class="meta-item blog-students">
+                          <span class="meta-value"> 6min read</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <ul class="blog-meta">
-                    <li class="meta-item blog-lesson">
-                      <span class="meta-value"> April 13, 2020 </span>
-                    </li>
-                    <li class="meta-item blog-students">
-                      <span class="meta-value"> 6min read</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="grids5-info mt-5">
-                <a href="blog-single" class="d-block zoom"
-                  ><img
-                    src="assets/images/2.jpg"
-                    alt=""
-                    class="img-fluid radius-image news-image"
-                /></a>
-                <div class="blog-info align-self">
-                  <a href="blog-single" class="blog-desc1"
-                    >Register a Domain or Subdomain With a Website Host
-                  </a>
-                  <div class="author align-items-center mt-3 mb-1">
-                    <a href="#author">Johnson smith</a> in
-                    <a href="#url">Design</a>
+                {{else}}
+                  <div class="grids5-info mt-5">
+                    <a href="blog-single" class="d-block zoom"
+                      ><img
+                        src="{{this.image}}"
+                        alt=""
+                        class="img-fluid radius-image news-image"
+                    /></a>
+                    <div class="blog-info align-self">
+                      <a href="blog-single" class="blog-desc1"
+                        >{{this.title}}
+                      </a>
+                      <div class="author align-items-center mt-3 mb-1">
+                        <a href="#author">{{this.author}}</a> in
+                        <a href="#url">Design</a>
+                      </div>
+                      <ul class="blog-meta">
+                        <li class="meta-item blog-lesson">
+                          <span class="meta-value"> {{this.createdDate}} </span>
+                        </li>
+                        <li class="meta-item blog-students">
+                          <span class="meta-value"> 6min read</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <ul class="blog-meta">
-                    <li class="meta-item blog-lesson">
-                      <span class="meta-value"> April 13, 2020 </span>
-                    </li>
-                    <li class="meta-item blog-students">
-                      <span class="meta-value"> 6min read</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="grids5-info mt-5">
-                <a href="blog-single" class="d-block zoom"
-                  ><img
-                    src="assets/images/3.jpg"
-                    alt=""
-                    class="img-fluid radius-image news-image"
-                /></a>
-                <div class="blog-info align-self">
-                  <a href="blog-single" class="blog-desc1"
-                    >Home to Customize your blog's theme with 3 simple steps
-                  </a>
-                  <div class="author align-items-center mt-3 mb-1">
-                    <a href="#author">Johnson smith</a> in
-                    <a href="#url">Design</a>
-                  </div>
-                  <ul class="blog-meta">
-                    <li class="meta-item blog-lesson">
-                      <span class="meta-value"> April 13, 2020 </span>
-                    </li>
-                    <li class="meta-item blog-students">
-                      <span class="meta-value"> 6min read</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                {{/if}}
+              {{/each}}
+              
             </div>
           </div>
         </div>
@@ -213,29 +194,24 @@
           <a href="blog-single">
             <img
               class="card-img-bottom d-block radius-image"
-              src="assets/images/p3.jpg"
+              src="{{singlePost.image}}"
               alt="Card image cap"
             />
           </a>
         </div>
         <div class="col-lg-6 blog-details align-self mt-lg-0 mt-sm-5 mt-4">
           <a href="blog-single" class="blog-desc-big"
-            >Your Blog Posts are Boring: 9 Tips for Making your Writing more
-            Interesting
+            >{{singlePost.title}}
           </a>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            blanditiis, odit non asperiores possimus voluptas sit nihil nam id
-            explicabo saepe sapiente excepturi similique, dicta officia odio
-            natus nemo. Ratione ipsa distinctio explicabo esse quod autem
-            veritatis, in fugit odio.
+            {{singlePost.description}}
           </p>
           <div class="author align-items-center mt-4 mb-1">
-            <a href="#author">Johnson smith</a> in <a href="#url">Design</a>
+            <a href="#author">{{singlePost.author}}</a> in <a href="#url">Design</a>
           </div>
           <ul class="blog-meta">
             <li class="meta-item blog-lesson">
-              <span class="meta-value"> April 13, 2020 </span>
+              <span class="meta-value"> {{singlePost.createdDate}} </span>
             </li>
             <li class="meta-item blog-students">
               <span class="meta-value"> 6min read</span>
@@ -252,111 +228,123 @@
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <div class="list-view list-view1">
-            <div class="grids5-info">
-              <a href="blog-single" class="d-block zoom"
-                ><img
-                  src="assets/images/4.jpg"
-                  alt=""
-                  class="img-fluid radius-image news-image"
-              /></a>
-              <div class="blog-info align-self">
-                <a href="blog-single" class="blog-desc1"
-                  >Edit/proofread your post, and fix your formatting.
-                </a>
-                <div class="author align-items-center mt-3 mb-1">
-                  <a href="#author">Johnson smith</a> in
-                  <a href="#url">Design</a>
+            {{#each highlightPostFistCol}}
+              {{#if (isZero @index)}}
+                <div class="grids5-info">
+                  <a href="blog-single" class="d-block zoom"
+                    ><img
+                      src="{{this.image}}"
+                      alt=""
+                      class="img-fluid radius-image news-image"
+                  /></a>
+                  <div class="blog-info align-self">
+                    <a href="blog-single" class="blog-desc1"
+                      >{{this.title}}
+                    </a>
+                    <div class="author align-items-center mt-3 mb-1">
+                      <a href="#author">{{this.author}}</a> in
+                      <a href="#url">Design</a>
+                    </div>
+                    <ul class="blog-meta">
+                      <li class="meta-item blog-lesson">
+                        <span class="meta-value"> {{this.createdDate}} </span>
+                      </li>
+                      <li class="meta-item blog-students">
+                        <span class="meta-value"> 6min read</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <ul class="blog-meta">
-                  <li class="meta-item blog-lesson">
-                    <span class="meta-value"> April 13, 2020 </span>
-                  </li>
-                  <li class="meta-item blog-students">
-                    <span class="meta-value"> 6min read</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="grids5-info mt-5">
-              <a href="blog-single" class="d-block zoom"
-                ><img
-                  src="assets/images/5.jpg"
-                  alt=""
-                  class="img-fluid radius-image news-image"
-              /></a>
-              <div class="blog-info align-self">
-                <a href="blog-single" class="blog-desc1"
-                  >The Beginner's Guide to Starting a Successful Blog in 2020
-                </a>
-                <div class="author align-items-center mt-3 mb-1">
-                  <a href="#author">Johnson smith</a> in
-                  <a href="#url">Design</a>
+              {{else}}
+                <div class="grids5-info mt-5">
+                  <a href="blog-single" class="d-block zoom"
+                    ><img
+                      src="{{this.image}}"
+                      alt=""
+                      class="img-fluid radius-image news-image"
+                  /></a>
+                  <div class="blog-info align-self">
+                    <a href="blog-single" class="blog-desc1"
+                      >{{this.title}}
+                    </a>
+                    <div class="author align-items-center mt-3 mb-1">
+                      <a href="#author">{{this.author}}</a> in
+                      <a href="#url">Design</a>
+                    </div>
+                    <ul class="blog-meta">
+                      <li class="meta-item blog-lesson">
+                        <span class="meta-value"> {{this.createdDate}} </span>
+                      </li>
+                      <li class="meta-item blog-students">
+                        <span class="meta-value"> 6min read</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <ul class="blog-meta">
-                  <li class="meta-item blog-lesson">
-                    <span class="meta-value"> April 13, 2020 </span>
-                  </li>
-                  <li class="meta-item blog-students">
-                    <span class="meta-value"> 6min read</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              {{/if}}
+            {{/each}}
+            
           </div>
         </div>
 
         <div class="col-lg-5 col-md-6 mt-md-0 mt-5">
           <div class="list-view list-view1">
-            <div class="grids5-info">
-              <a href="blog-single" class="d-block zoom"
-                ><img
-                  src="assets/images/6.jpg"
-                  alt=""
-                  class="img-fluid radius-image news-image"
-              /></a>
-              <div class="blog-info align-self">
-                <a href="blog-single" class="blog-desc1"
-                  >Home to Organize your content in an outline.
-                </a>
-                <div class="author align-items-center mt-3 mb-1">
-                  <a href="#author">Johnson smith</a> in
-                  <a href="#url">Design</a>
+            {{#each highlightPostSecondCol}}
+              {{#if (isZero @index)}}
+                <div class="grids5-info">
+                  <a href="blog-single" class="d-block zoom"
+                    ><img
+                      src="{{this.image}}"
+                      alt=""
+                      class="img-fluid radius-image news-image"
+                  /></a>
+                  <div class="blog-info align-self">
+                    <a href="blog-single" class="blog-desc1"
+                      >{{this.title}}
+                    </a>
+                    <div class="author align-items-center mt-3 mb-1">
+                      <a href="#author">{{this.author}}</a> in
+                      <a href="#url">Design</a>
+                    </div>
+                    <ul class="blog-meta">
+                      <li class="meta-item blog-lesson">
+                        <span class="meta-value"> {{this.createdDate}} </span>
+                      </li>
+                      <li class="meta-item blog-students">
+                        <span class="meta-value"> 6min read</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <ul class="blog-meta">
-                  <li class="meta-item blog-lesson">
-                    <span class="meta-value"> April 13, 2020 </span>
-                  </li>
-                  <li class="meta-item blog-students">
-                    <span class="meta-value"> 6min read</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="grids5-info mt-5">
-              <a href="blog-single" class="d-block zoom"
-                ><img
-                  src="assets/images/7.jpg"
-                  alt=""
-                  class="img-fluid radius-image news-image"
-              /></a>
-              <div class="blog-info align-self">
-                <a href="blog-single" class="blog-desc1"
-                  >10 Fresh Ways to Get Better Results From Your Blog Posts
-                </a>
-                <div class="author align-items-center mt-3 mb-1">
-                  <a href="#author">Johnson smith</a> in
-                  <a href="#url">Design</a>
+              {{else}}
+                <div class="grids5-info mt-5">
+                  <a href="blog-single" class="d-block zoom"
+                    ><img
+                      src="{{this.image}}"
+                      alt=""
+                      class="img-fluid radius-image news-image"
+                  /></a>
+                  <div class="blog-info align-self">
+                    <a href="blog-single" class="blog-desc1"
+                      >{{this.title}}
+                    </a>
+                    <div class="author align-items-center mt-3 mb-1">
+                      <a href="#author">{{this.author}}</a> in
+                      <a href="#url">Design</a>
+                    </div>
+                    <ul class="blog-meta">
+                      <li class="meta-item blog-lesson">
+                        <span class="meta-value"> {{this.createdDate}} </span>
+                      </li>
+                      <li class="meta-item blog-students">
+                        <span class="meta-value"> 6min read</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <ul class="blog-meta">
-                  <li class="meta-item blog-lesson">
-                    <span class="meta-value"> April 13, 2020 </span>
-                  </li>
-                  <li class="meta-item blog-students">
-                    <span class="meta-value"> 6min read</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              {{/if}}
+            {{/each}}
+            
           </div>
         </div>
 
@@ -383,19 +371,17 @@
             <div class="blog-info align-self">
               <span class="category">Technology</span>
               <a href="blog-single" class="blog-desc mt-0"
-                >Curated Collection Post : 8 Examples of Evolution in Action
+                >{{finalPost.title}}
               </a>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt tenetur accusamus voluptas. Mollitia, natus ipsam
-                maiores placeat elit.
+                {{finalPost.description}}
               </p>
               <div class="author align-items-center mt-3 mb-1">
-                <a href="#author">Johnson smith</a> in <a href="#url">Design</a>
+                <a href="#author">{{finalPost.author}}</a> in <a href="#url">Design</a>
               </div>
               <ul class="blog-meta">
                 <li class="meta-item blog-lesson">
-                  <span class="meta-value"> April 13, 2020 </span>
+                  <span class="meta-value"> {{finalPost.createdDate}} </span>
                 </li>
                 <li class="meta-item blog-students">
                   <span class="meta-value"> 6min read</span>

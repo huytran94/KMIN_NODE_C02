@@ -1,0 +1,36 @@
+<div class="container">
+   <form id="postCreateForm">
+      <div class="form-group">
+         <label for="postTitle">title</label>
+         <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter post title">
+      </div>
+      <div class="form-group">
+         <label for="postAuthor">author</label>
+         <input type="text" class="form-control" id="postAuthor" name="postAuthor" placeholder="Enter post title">
+      </div>
+      <div class="form-group">
+         <label for="postDescription">Description</label>
+         <textarea class="form-control" id="postDescription" name="postDescription" rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+   </form>
+</div>
+<script>
+  let formEl = document.getElementById("postCreateForm");
+  formEl.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    const options = {
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(formData)),
+    };
+
+    const res = await fetch("/blogs", options);
+    if(res.status === 201) {
+      console.log("OK");
+    }
+  });
+</script>
